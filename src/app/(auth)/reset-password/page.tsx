@@ -9,7 +9,9 @@ import { useState, useEffect } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { api } from "@/lib/api"
 
-export default function ResetPasswordPage() {
+import React, { Suspense } from "react"
+
+function ResetPasswordContent() {
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
@@ -51,10 +53,12 @@ export default function ResetPasswordPage() {
   }
 
   return (
-    <AuthLayout 
-      title="Reset Password" 
-      subtitle="Enter your new password below."
-    >
+    <AuthLayout>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold tracking-tight mb-2">Reset Password</h1>
+        <p className="text-sm text-muted-foreground mb-6">Enter your new password below.</p>
+      </div>
+
       {status === "success" ? (
         <div className="bg-primary/10 text-primary p-4 rounded-xl border border-primary/20 flex flex-col gap-4 text-center">
           <p className="font-medium text-sm leading-relaxed">{message}</p>
@@ -109,5 +113,19 @@ export default function ResetPasswordPage() {
         </form>
       )}
     </AuthLayout>
+  )
+}
+
+export default function ResetPasswordPage() {
+  return (
+    <Suspense fallback={
+      <AuthLayout>
+        <div className="flex items-center justify-center py-12">
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </AuthLayout>
+    }>
+      <ResetPasswordContent />
+    </Suspense>
   )
 }
