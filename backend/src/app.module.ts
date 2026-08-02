@@ -63,9 +63,7 @@ import { InquiriesModule } from './modules/inquiries/inquiries.module';
         GOOGLE_CLIENT_ID: Joi.string().required(),
         GOOGLE_CLIENT_SECRET: Joi.string().required(),
         GOOGLE_CALLBACK_URL: Joi.string().required(),
-        FRONTEND_OAUTH_REDIRECT_URL: Joi.string().default(
-          'http://localhost:3000/auth/success',
-        ),
+        FRONTEND_OAUTH_REDIRECT_URL: Joi.string().optional(),
         FRONTEND_URL: Joi.string().required(),
         FRONTEND_VERIFY_EMAIL_URL: Joi.string().required(),
         FRONTEND_RESET_PASSWORD_URL: Joi.string().required(),
