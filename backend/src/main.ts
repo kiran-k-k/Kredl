@@ -63,9 +63,9 @@ async function bootstrap() {
   });
 
   // CORS
-  const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+  const frontendUrls = (process.env.FRONTEND_URL || 'http://localhost:3000').split(',').map(url => url.trim());
   app.enableCors({
-    origin: frontendUrl,
+    origin: frontendUrls,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
