@@ -36,14 +36,14 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <AuthLayout 
-      title="Forgot Password" 
-      subtitle="Enter your email address and we'll send you a link to reset your password."
-    >
+    <AuthLayout>
       <div className="mb-6">
+        <h1 className="text-2xl font-bold tracking-tight mb-2">Forgot Password</h1>
+        <p className="text-sm text-muted-foreground mb-6">Enter your email address and we'll send you a link to reset your password.</p>
         <Link href="/login" className="text-sm text-primary hover:underline inline-flex items-center gap-1 font-medium">
           <ArrowLeft className="w-4 h-4" /> Back to login
         </Link>
+
       </div>
 
       {status === "success" ? (
