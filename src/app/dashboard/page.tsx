@@ -130,7 +130,7 @@ export default function DashboardPage() {
                       title={course.title}
                       description={course.description || "Start learning this new skill."}
                       actionLabel="View Course"
-                      actionHref={`/courses/${course.courseId}`}
+                      actionHref={`/courses/${course.slug}`}
                     />
                   ))}
                 </div>
