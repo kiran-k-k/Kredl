@@ -1,0 +1,308 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/v1",
+    "status": 200,
+    "durationMs": 11
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/demo/public",
+    "status": 200,
+    "durationMs": 5
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/demo/authenticated",
+    "status": 401,
+    "durationMs": 6
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/demo/student-only",
+    "status": 401,
+    "durationMs": 4
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/demo/admin-only",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/demo/tpo-only",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/demo/admin-and-tpo",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/users/me/onboarding",
+    "status": 401,
+    "durationMs": 16
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/register",
+    "status": 400,
+    "durationMs": 14
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login",
+    "status": 401,
+    "durationMs": 4
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/logout",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/verify-email",
+    "status": 400,
+    "durationMs": 3
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/resend-verification",
+    "status": 400,
+    "durationMs": 5
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/forgot-password",
+    "status": 400,
+    "durationMs": 3
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/reset-password",
+    "status": 400,
+    "durationMs": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/auth/me",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/auth/google",
+    "status": 200,
+    "durationMs": 2168
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/courses",
+    "status": 401,
+    "durationMs": 12
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/courses",
+    "status": 401,
+    "durationMs": 7
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/courses",
+    "status": 401,
+    "durationMs": 6
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/courses/stats",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/modules",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/modules",
+    "status": 401,
+    "durationMs": 1
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/lessons",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/lessons",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/quiz/start",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/quiz/submit",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/quizzes",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/quizzes",
+    "status": 401,
+    "durationMs": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/analytics/quizzes",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/analytics/questions",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/lesson-notes",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/lesson-notes",
+    "status": 401,
+    "durationMs": 1
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/projects",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/projects",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/companies",
+    "status": 401,
+    "durationMs": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/companies",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/job-roles",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/job-roles",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/jobs",
+    "status": 401,
+    "durationMs": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/jobs",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/health/db/live",
+    "status": 200,
+    "durationMs": 126
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/health/db/full",
+    "status": 200,
+    "durationMs": 153
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/health/security",
+    "status": 200,
+    "durationMs": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/dashboard",
+    "status": 401,
+    "durationMs": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/dashboard/continue-learning",
+    "status": 401,
+    "durationMs": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/dashboard/recommended",
+    "status": 401,
+    "durationMs": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/dashboard/progress",
+    "status": 401,
+    "durationMs": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/dashboard/activity",
+    "status": 401,
+    "durationMs": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/dashboard/notifications",
+    "status": 401,
+    "durationMs": 1
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "moduleSlug": "m01-java-fundamentals",
+    "title": "Console Calculator",
+    "slug": "m01-p01-calculator",
+    "description": "A simple console-based calculator that takes user input and performs basic arithmetic operations.",
+    "difficulty": "Beginner",
+    "githubUrl": "https://github.com/TheAlgorithms/Java",
+    "technologiesUsed": ["Java", "CLI", "Scanner"],
+    "learningObjectives": [
+      "Process user input from the console",
+      "Apply basic arithmetic operators",
+      "Use control flow structures (if-else or switch) to determine operations"
+    ],
+    "suggestedImprovements": "Add support for floating point numbers. Implement a loop to allow multiple calculations without restarting."
+  }
+]

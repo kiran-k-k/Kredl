@@ -1,0 +1,68 @@
+[
+  {
+    "lessonSlug": "m01-l01-intro",
+    "summary": "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
+    "detailedNotes": "## What is Java?\nJava is a strongly typed, object-oriented programming language created by James Gosling at Sun Microsystems in 1995. Its core philosophy is \"Write Once, Run Anywhere\" (WORA).\n\n## The Java Virtual Machine (JVM)\nThe JVM is the engine that drives the Java code. It converts Java bytecode into machine language. Because each operating system has its own JVM implementation, Java achieves platform independence.\n\n## JRE vs JDK\n- **JRE (Java Runtime Environment)**: Contains the JVM and library classes required to run a Java program.\n- **JDK (Java Development Kit)**: Contains the JRE plus development tools like the compiler (`javac`) and debugger.",
+    "keyPoints": [
+      "Java is platform-independent because of the JVM.",
+      "The JDK is required to write and compile Java code.",
+      "The JRE is required only to run Java code."
+    ],
+    "importantTerminology": [
+      { "term": "JVM", "definition": "Java Virtual Machine, the runtime environment that executes bytecode." },
+      { "term": "Bytecode", "definition": "The intermediate representation of Java code after compilation (.class files)." }
+    ],
+    "practicalExercises": [],
+    "commonMistakes": [
+      "Confusing the JDK and JRE when downloading Java for development."
+    ],
+    "bestPractices": []
+  },
+  {
+    "lessonSlug": "m01-l02-setup",
+    "summary": "To write Java, you need to install the JDK and a suitable IDE.",
+    "detailedNotes": "## Installing the JDK\nAlways download a Long-Term Support (LTS) version of Java (e.g., Java 17 or Java 21) from Oracle or Adoptium. Set the `JAVA_HOME` environment variable to point to your JDK installation.\n\n## Choosing an IDE\nIntelliJ IDEA is the industry standard for Java development. Eclipse and VS Code are also popular alternatives.",
+    "keyPoints": [
+      "Set JAVA_HOME correctly so tools can find the JDK.",
+      "Use an LTS release for stability."
+    ],
+    "importantTerminology": [
+      { "term": "IDE", "definition": "Integrated Development Environment, a software application that provides comprehensive facilities for software development." }
+    ],
+    "practicalExercises": [
+      "Install JDK 21 on your machine.",
+      "Install IntelliJ IDEA Community Edition.",
+      "Write a 'Hello World' program and run it."
+    ],
+    "commonMistakes": [
+      "Forgetting to set system environment variables after installation."
+    ],
+    "bestPractices": [
+      "Always use package declarations to avoid the default package."
+    ]
+  },
+  {
+    "lessonSlug": "m01-l03-datatypes",
+    "summary": "Variables are containers for storing data values. Java has 8 primitive data types.",
+    "detailedNotes": "## Primitives in Java\nJava is strongly typed, meaning every variable must be declared with a data type.\n\n- `byte` (8 bits)\n- `short` (16 bits)\n- `int` (32 bits)\n- `long` (64 bits)\n- `float` (32 bits)\n- `double` (64 bits)\n- `boolean` (true/false)\n- `char` (16-bit Unicode)\n\n## String is not a Primitive\n`String` is a reference type (an object) in Java, not a primitive.",
+    "keyPoints": [
+      "Java has exactly 8 primitive types.",
+      "All numeric types are signed.",
+      "Default value of int is 0, boolean is false, and object references is null."
+    ],
+    "importantTerminology": [
+      { "term": "Primitive", "definition": "The most basic data types built into the language." }
+    ],
+    "practicalExercises": [
+      "Declare one variable of each primitive type and print them to the console."
+    ],
+    "commonMistakes": [
+      "Forgetting to append 'f' to a float literal (e.g. `float pi = 3.14f;`).",
+      "Using `==` to compare Strings instead of `.equals()`."
+    ],
+    "bestPractices": [
+      "Use camelCase for variable names.",
+      "Use `double` over `float` for high-precision decimals."
+    ]
+  }
+]

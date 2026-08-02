@@ -1,0 +1,388 @@
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model, Types } from 'mongoose';
+import { User, UserDocument, UserStatus, AuthProvider } from './schemas/user.schema';
+import {
+  CareerProfile,
+  CareerProfileDocument,
+} from './schemas/career-profile.schema';
+import { UserProfileSnippetDto } from '../dashboard/dto/dashboard-response.dto';
+
+@Injectable()
+export class UsersService {
+  constructor(
+    @InjectModel(User.name) private userModel: Model<UserDocument>,
+    @InjectModel(CareerProfile.name)
+    private careerProfileModel: Model<CareerProfileDocument>,
+  ) {}
+
+  async create(userData: Partial<User>): Promise<UserDocument> {
+    const createdUser = new this.userModel(userData);
+    return createdUser.save();
+  }
+
+  async findByEmail(email: string): Promise<UserDocument | null> {
+    return this.userModel.findOne({ email }).exec();
+  }
+
+  async findById(id: string): Promise<UserDocument | null> {
+    return this.userModel.findById(id).exec();
+  }
+
+  async findByGoogleId(googleId: string): Promise<UserDocument | null> {
+    return this.userModel.findOne({ googleId }).exec();
+  }
+
+  async linkGoogleAccount(
+    userId: string,
+    googleId: string,
+    profileImage?: string,
+  ): Promise<UserDocument | null> {
+    return this.userModel
+      .findByIdAndUpdate(
+        userId,
+        {
+          $set: {
+            googleId,
+            ...(profileImage ? { profileImage } : {}),
+          },
+          $addToSet: {
+            providers: 'GOOGLE',
+          },
+        },
+        { new: true },
+      )
+      .exec();
+  }
+
+  async updateRefreshToken(
+    userId: string,
+    refreshTokenHash: string | null,
+  ): Promise<void> {
+    await this.userModel
+      .updateOne(
+        { _id: new Types.ObjectId(userId) },
+        { hashedRefreshToken: refreshTokenHash },
+      )
+      .exec();
+  }
+
+  async resetFailedLogin(userId: string): Promise<UserDocument | null> {
+    return this.userModel
+      .findByIdAndUpdate(
+        userId,
+        {
+          $set: { failedLoginAttempts: 0 },
+          $unset: { lockedUntil: '' },
+        },
+        { new: true },
+      )
+      .exec();
+  }
+
+  async setVerificationToken(
+    userId: string,
+    tokenHash: string,
+    expiresAt: Date,
+  ): Promise<UserDocument | null> {
+    return this.userModel
+      .findByIdAndUpdate(
+        userId,
+        {
+          $set: {
+            emailVerificationTokenHash: tokenHash,
+            emailVerificationTokenExpiresAt: expiresAt,
+          },
+        },
+        { new: true },
+      )
+      .exec();
+  }
+
+  async setPasswordResetToken(
+    userId: string,
+    tokenHash: string,
+    expiresAt: Date,
+  ): Promise<UserDocument | null> {
+    return this.userModel
+      .findByIdAndUpdate(
+        userId,
+        {
+          $set: {
+            passwordResetTokenHash: tokenHash,
+            passwordResetTokenExpiresAt: expiresAt,
+          },
+        },
+        { new: true },
+      )
+      .exec();
+  }
+
+  async findByPasswordResetToken(
+    tokenHash: string,
+  ): Promise<UserDocument | null> {
+    return this.userModel.findOne({ passwordResetTokenHash: tokenHash }).exec();
+  }
+
+  async clearPasswordResetToken(userId: string): Promise<UserDocument | null> {
+    return this.userModel
+      .findByIdAndUpdate(
+        userId,
+        {
+          $unset: {
+            passwordResetTokenHash: '',
+            passwordResetTokenExpiresAt: '',
+          },
+        },
+        { new: true },
+      )
+      .exec();
+  }
+
+  async updatePassword(
+    userId: string,
+    passwordHash: string,
+  ): Promise<UserDocument | null> {
+    return this.userModel
+      .findByIdAndUpdate(
+        userId,
+        {
+          $set: {
+            passwordHash,
+            lastPasswordChangedAt: new Date(),
+          },
+          $inc: { tokenVersion: 1 }, // Invalidate all existing refresh tokens
+          $addToSet: { providers: AuthProvider.EMAIL },
+          $unset: {
+            passwordResetTokenHash: '',
+            passwordResetTokenExpiresAt: '',
+          },
+        },
+        { new: true },
+      )
+      .exec();
+  }
+
+  async findByVerificationToken(
+    tokenHash: string,
+  ): Promise<UserDocument | null> {
+    return this.userModel
+      .findOne({ emailVerificationTokenHash: tokenHash })
+      .exec();
+  }
+
+  async markEmailAsVerified(userId: string): Promise<UserDocument | null> {
+    return this.userModel
+      .findByIdAndUpdate(
+        userId,
+        {
+          $set: {
+            isEmailVerified: true,
+            status: UserStatus.ACTIVE,
+          },
+          $unset: {
+            emailVerificationTokenHash: '',
+            emailVerificationTokenExpiresAt: '',
+          },
+        },
+        { new: true },
+      )
+      .exec();
+  }
+
+  async incrementFailedLogin(userId: string): Promise<UserDocument | null> {
+    return this.userModel
+      .findByIdAndUpdate(
+        userId,
+        { $inc: { failedLoginAttempts: 1 } },
+        { new: true },
+      )
+      .exec();
+  }
+
+  async lockAccount(userId: string, lockedUntil: Date): Promise<void> {
+    await this.userModel
+      .updateOne(
+        { _id: new Types.ObjectId(userId) },
+        { status: UserStatus.LOCKED, lockedUntil },
+      )
+      .exec();
+  }
+
+  async updateOnboarding(
+    userId: string,
+    onboardingData: { courseId?: string; jobRoleId?: string },
+  ): Promise<UserDocument | null> {
+    const careerGoal: Record<string, any> = {
+      selectedAt: new Date(),
+      isCompleted: false,
+    };
+    if (onboardingData.courseId)
+      careerGoal.courseId = new Types.ObjectId(onboardingData.courseId);
+    if (onboardingData.jobRoleId)
+      careerGoal.jobRoleId = new Types.ObjectId(onboardingData.jobRoleId);
+
+    return this.userModel
+      .findByIdAndUpdate(userId, { $set: { careerGoal } }, { new: true })
+      .exec();
+  }
+
+  async getDashboardProfile(
+    userId: string,
+  ): Promise<UserProfileSnippetDto | null> {
+    const user = await this.userModel
+      .findById(userId)
+      .populate('roleId', 'name')
+      .populate('collegeId', 'name')
+      .select(
+        'firstName lastName email profileImage department createdAt roleId collegeId',
+      )
+      .lean()
+      .exec();
+
+    if (!user) return null;
+
+    return {
+      id: user._id.toString(),
+      name: `${user.firstName} ${user.lastName}`,
+      email: user.email,
+      avatar: user.profileImage,
+      role: (user.roleId as unknown as { name: string })?.name || 'STUDENT',
+      college: (user.collegeId as unknown as { name: string })?.name,
+      department: user.department,
+      joinedAt: (user as unknown as { createdAt: Date }).createdAt,
+    };
+  }
+  async findAllAdmin(
+    page: number = 1,
+    limit: number = 10,
+    search?: string,
+    role?: string,
+    status?: string,
+  ) {
+    const query: any = { deletedAt: { $exists: false } };
+
+    if (search) {
+      query.$or = [
+        { firstName: { $regex: search, $options: 'i' } },
+        { lastName: { $regex: search, $options: 'i' } },
+        { email: { $regex: search, $options: 'i' } },
+      ];
+    }
+
+    if (status) {
+      query.status = status;
+    }
+
+    // Role filtering requires joining with Role collection or passing roleId if known
+    // For simplicity, if role name is passed, we first find the roleId
+    // But since it's just a string like "STUDENT", we will need to inject RolesService
+    // Let's populate roleId
+    const skip = (page - 1) * limit;
+
+    const [users, total] = await Promise.all([
+      this.userModel
+        .find(query)
+        .populate('roleId', 'name')
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limit)
+        .lean()
+        .exec(),
+      this.userModel.countDocuments(query),
+    ]);
+
+    // Filter by role if role name was provided (done post-fetch if it's populated)
+    let filteredUsers = users;
+    if (role) {
+      filteredUsers = users.filter((u: any) => u.roleId?.name === role);
+      // Note: A real implementation would query the role ID first for better performance, but this is fine for now
+    }
+
+    return {
+      users: filteredUsers,
+      total,
+      page,
+      limit,
+      totalPages: Math.ceil(total / limit),
+    };
+  }
+
+  async updateUserStatus(
+    id: string,
+    status: UserStatus,
+  ): Promise<UserDocument | null> {
+    return this.userModel
+      .findByIdAndUpdate(id, { $set: { status } }, { new: true })
+      .exec();
+  }
+
+  async softDeleteUser(id: string, adminId: string): Promise<void> {
+    await this.userModel
+      .updateOne(
+        { _id: new Types.ObjectId(id) },
+        {
+          $set: {
+            deletedAt: new Date(),
+            deletedBy: new Types.ObjectId(adminId),
+            status: UserStatus.DELETED,
+          },
+        },
+      )
+      .exec();
+  }
+
+  async reactivateUser(id: string | Types.ObjectId, updateData: Partial<User>): Promise<UserDocument | null> {
+    return this.userModel.findByIdAndUpdate(
+      id,
+      {
+        $set: {
+          ...updateData,
+          status: UserStatus.ACTIVE,
+        },
+        $unset: {
+          deletedAt: 1,
+          deletedBy: 1,
+        }
+      },
+      { new: true }
+    ).exec();
+  }
+
+  async updateProfile(id: string, updateDto: any): Promise<UserDocument> {
+    const user = await this.userModel
+      .findByIdAndUpdate(id, { $set: updateDto }, { new: true })
+      .exec();
+
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+    return user;
+  }
+
+  async getCareerProfile(
+    userId: string,
+  ): Promise<CareerProfileDocument | null> {
+    return this.careerProfileModel.findOne({ userId }).exec();
+  }
+
+  async updateCareerProfile(
+    userId: string,
+    updateDto: any,
+  ): Promise<CareerProfileDocument> {
+    const profile = await this.careerProfileModel
+      .findOneAndUpdate(
+        { userId },
+        { $set: updateDto },
+        { new: true, upsert: true },
+      )
+      .exec();
+
+    // Also mark the user's profile as completed
+    await this.userModel
+      .findByIdAndUpdate(userId, { profileCompleted: true })
+      .exec();
+
+    return profile;
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "moduleSlug": "m01-java-fundamentals",
+    "title": "Introduction to Java and JVM",
+    "slug": "m01-l01-intro",
+    "order": 1,
+    "shortDescription": "Understand what Java is, its history, and how the JVM makes it platform-independent.",
+    "estimatedDuration": 30,
+    "youtubeUrls": [
+      {
+        "url": "https://www.youtube.com/watch?v=eIrMbAQSU34",
+        "title": "Java Tutorial for Beginners [2020]",
+        "channelName": "Programming with Mosh",
+        "whySelected": "Excellent, highly visual introduction to what Java is and how it runs."
+      }
+    ],
+    "isPublished": true,
+    "isFree": true
+  },
+  {
+    "moduleSlug": "m01-java-fundamentals",
+    "title": "Setting up the Environment",
+    "slug": "m01-l02-setup",
+    "order": 2,
+    "shortDescription": "Install the Java Development Kit (JDK) and IntelliJ IDEA.",
+    "estimatedDuration": 45,
+    "youtubeUrls": [
+      {
+        "url": "https://www.youtube.com/watch?v=WPvGqX-TXP0",
+        "title": "Java Tutorial for Beginners",
+        "channelName": "Programming with Mosh",
+        "whySelected": "Covers JDK installation and IDE setup clearly for absolute beginners."
+      }
+    ],
+    "isPublished": true,
+    "isFree": true
+  },
+  {
+    "moduleSlug": "m01-java-fundamentals",
+    "title": "Variables, Data Types, and Operators",
+    "slug": "m01-l03-datatypes",
+    "order": 3,
+    "shortDescription": "Learn how to store data in memory using Java's primitive types.",
+    "estimatedDuration": 60,
+    "youtubeUrls": [
+      {
+        "url": "https://www.youtube.com/watch?v=ntLJmHOJ0ME",
+        "title": "Variables and Data Types in Java",
+        "channelName": "Amigoscode",
+        "whySelected": "Clear explanation of strongly typed languages and memory."
+      }
+    ],
+    "isPublished": true,
+    "isFree": false
+  }
+]

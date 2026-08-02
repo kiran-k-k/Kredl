@@ -1,0 +1,99 @@
+{
+  "moduleSlug": "m01-java-fundamentals",
+  "title": "Java Fundamentals Quiz",
+  "description": "Test your knowledge on Java basics, the JVM, and primitive data types.",
+  "timeLimit": 30,
+  "passingScore": 70,
+  "questions": [
+    {
+      "questionText": "Which of the following makes Java platform-independent?",
+      "options": ["The Java Compiler", "The Java Virtual Machine (JVM)", "The Operating System", "The JDK"],
+      "correctAnswerIndex": 1,
+      "explanation": "The JVM interprets compiled Java bytecode for a specific operating system, making the bytecode platform-independent."
+    },
+    {
+      "questionText": "What is the size of the 'int' primitive data type in Java?",
+      "options": ["8 bits", "16 bits", "32 bits", "64 bits"],
+      "correctAnswerIndex": 2,
+      "explanation": "In Java, an 'int' is a 32-bit signed two's complement integer."
+    },
+    {
+      "questionText": "Which tool is used to compile Java source code?",
+      "options": ["java", "javac", "javap", "javadoc"],
+      "correctAnswerIndex": 1,
+      "explanation": "The 'javac' command compiles .java source files into .class bytecode files."
+    },
+    {
+      "questionText": "Which of the following is NOT a primitive data type in Java?",
+      "options": ["boolean", "float", "String", "char"],
+      "correctAnswerIndex": 2,
+      "explanation": "String is an Object (reference type) in Java, not a primitive data type."
+    },
+    {
+      "questionText": "What is the default value of a boolean variable declared as a class instance variable?",
+      "options": ["true", "false", "null", "0"],
+      "correctAnswerIndex": 1,
+      "explanation": "The default value of a boolean instance variable in Java is false."
+    },
+    {
+      "questionText": "What does JRE stand for?",
+      "options": ["Java Runtime Engine", "Java Runtime Environment", "Java Routing Environment", "Java Running Execution"],
+      "correctAnswerIndex": 1,
+      "explanation": "JRE stands for Java Runtime Environment, which provides the libraries and JVM needed to execute Java programs."
+    },
+    {
+      "questionText": "Which variable naming convention is the standard best practice in Java?",
+      "options": ["snake_case", "PascalCase", "camelCase", "kebab-case"],
+      "correctAnswerIndex": 2,
+      "explanation": "Java variables typically follow the camelCase naming convention (e.g., myVariableName)."
+    },
+    {
+      "questionText": "What is the output of 'System.out.println(10 / 3);' in Java?",
+      "options": ["3.333", "3", "3.0", "Error"],
+      "correctAnswerIndex": 1,
+      "explanation": "Since both 10 and 3 are integers, Java performs integer division, discarding the remainder."
+    },
+    {
+      "questionText": "Which keyword is used to declare a constant variable in Java?",
+      "options": ["const", "constant", "static", "final"],
+      "correctAnswerIndex": 3,
+      "explanation": "The 'final' keyword prevents a variable's value from being modified after initial assignment."
+    },
+    {
+      "questionText": "What is the size of the 'char' data type in Java?",
+      "options": ["8 bits", "16 bits", "32 bits", "64 bits"],
+      "correctAnswerIndex": 1,
+      "explanation": "In Java, a 'char' is a 16-bit Unicode character."
+    },
+    {
+      "questionText": "Which of the following is a valid declaration of a float variable?",
+      "options": ["float f = 3.14;", "float f = 3.14f;", "float f = 3.14d;", "Float f = '3.14';"],
+      "correctAnswerIndex": 1,
+      "explanation": "Float literals must end with an 'f' or 'F', otherwise they are treated as double precision by default."
+    },
+    {
+      "questionText": "What does the 'main' method signature look like in a standard Java application?",
+      "options": ["public static void main(String[] args)", "public void main(String args)", "static public void main()", "private static void Main(String[] args)"],
+      "correctAnswerIndex": 0,
+      "explanation": "The correct signature is public static void main(String[] args). It is the entry point for the JVM."
+    },
+    {
+      "questionText": "Which of these operators is used for the logical AND operation?",
+      "options": ["&", "&&", "||", "!"],
+      "correctAnswerIndex": 1,
+      "explanation": "&& is the logical AND operator (short-circuiting), whereas & is a bitwise AND."
+    },
+    {
+      "questionText": "What happens if a local variable is used before it is initialized?",
+      "options": ["It throws an Exception at runtime", "It takes a default value", "The compiler throws an error", "It is assigned null"],
+      "correctAnswerIndex": 2,
+      "explanation": "Local variables in Java do not get default values. The compiler will throw an error if you attempt to read an uninitialized local variable."
+    },
+    {
+      "questionText": "In Java, an application must contain at least one...",
+      "options": ["Interface", "Package", "Class", "Module"],
+      "correctAnswerIndex": 2,
+      "explanation": "Every Java program must have at least one class definition."
+    }
+  ]
+}

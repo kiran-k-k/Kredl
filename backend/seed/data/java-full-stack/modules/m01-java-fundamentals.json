@@ -1,0 +1,22 @@
+{
+  "title": "Programming Fundamentals & Intro to Java",
+  "slug": "m01-java-fundamentals",
+  "order": 1,
+  "description": "An introduction to programming concepts, the Java ecosystem, and setting up the development environment.",
+  "learningObjectives": [
+    "Understand how computers execute programs",
+    "Install and configure the JDK and an IDE (IntelliJ IDEA)",
+    "Write, compile, and run your first Java program",
+    "Understand Java syntax, variables, and primitive data types",
+    "Use basic control flow (if-else, loops)"
+  ],
+  "skillsGained": [
+    "Environment Setup",
+    "Basic Syntax",
+    "Variables & Data Types",
+    "Control Flow"
+  ],
+  "prerequisites": [],
+  "estimatedStudyTime": 10,
+  "isPublished": true
+}

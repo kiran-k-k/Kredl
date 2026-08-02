@@ -1,0 +1,2 @@
+export const RESEND_CLIENT = 'RESEND_CLIENT';
+export const EMAIL_MAX_SUBJECT_LENGTH = 255;

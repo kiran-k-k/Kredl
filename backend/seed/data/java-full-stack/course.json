@@ -1,0 +1,21 @@
+{
+  "title": "Java Full Stack Developer",
+  "slug": "java-full-stack-developer",
+  "thumbnail": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+  "category": "Software Development",
+  "difficulty": "Intermediate",
+  "shortDescription": "Master full stack development with Java, Spring Boot, and React. Build production-ready enterprise applications from scratch.",
+  "description": "This comprehensive course takes you from Java basics to advanced full-stack engineering, complete with Spring Boot, Microservices, and React.js. Perfect for landing top-tier software engineering roles.",
+  "prerequisites": ["Basic understanding of programming logic", "No prior Java experience required"],
+  "learningOutcomes": [
+    "Master Core Java and OOP principles",
+    "Build robust backend APIs with Spring Boot",
+    "Develop interactive UIs with React",
+    "Implement Microservices and deploy using Docker"
+  ],
+  "estimatedDuration": 150,
+  "tags": ["Java", "Spring Boot", "React", "Microservices"],
+  "displayOrder": 1,
+  "isPublished": true,
+  "price": 0
+}

@@ -1,0 +1,133 @@
+{
+  "collections": [
+    {
+      "collection": "users",
+      "documentCount": 6,
+      "indexCount": 8,
+      "indexes": "_id, email, roleId, collegeId, department, status, googleId, providers"
+    },
+    {
+      "collection": "lessons",
+      "documentCount": 56,
+      "indexCount": 4,
+      "indexes": "_id, moduleId, moduleId_order, moduleId_slug"
+    },
+    {
+      "collection": "quizattempts",
+      "documentCount": 0,
+      "indexCount": 10,
+      "indexes": "_id, userId, quizId, moduleId, status, passed, userId_quizId_attemptNumber, moduleId_passed, userId_moduleId, userId_passed"
+    },
+    {
+      "collection": "projects",
+      "documentCount": 14,
+      "indexCount": 3,
+      "indexes": "_id, moduleId, courseId"
+    },
+    {
+      "collection": "applications",
+      "documentCount": 0,
+      "indexCount": 3,
+      "indexes": "_id, userId_jobId, jobId_status"
+    },
+    {
+      "collection": "lessonnotes",
+      "documentCount": 56,
+      "indexCount": 2,
+      "indexes": "_id, lessonId"
+    },
+    {
+      "collection": "announcements",
+      "documentCount": 0,
+      "indexCount": 2,
+      "indexes": "_id, audience_isActive_expiresAt"
+    },
+    {
+      "collection": "quizzes",
+      "documentCount": 17,
+      "indexCount": 3,
+      "indexes": "_id, moduleId, isPublished_isDeleted"
+    },
+    {
+      "collection": "modulecompletions",
+      "documentCount": 0,
+      "indexCount": 4,
+      "indexes": "_id, userId_moduleId, userId_courseId, userId_status"
+    },
+    {
+      "collection": "jobroles",
+      "documentCount": 20,
+      "indexCount": 2,
+      "indexes": "_id, title"
+    },
+    {
+      "collection": "jobs",
+      "documentCount": 35,
+      "indexCount": 3,
+      "indexes": "_id, companyId_roleId, isActive_deadline"
+    },
+    {
+      "collection": "adminactionslogs",
+      "documentCount": 0,
+      "indexCount": 5,
+      "indexes": "_id, adminId_createdAt, actionType_createdAt, targetEntity_targetEntityId, createdAt"
+    },
+    {
+      "collection": "analytics",
+      "documentCount": 0,
+      "indexCount": 3,
+      "indexes": "_id, date, date"
+    },
+    {
+      "collection": "courses",
+      "documentCount": 2,
+      "indexCount": 7,
+      "indexes": "_id, slug, tags, category_difficulty, _fts__ftsx, isPublished_rating_enrollmentCount, isPublished_displayOrder_createdAt"
+    },
+    {
+      "collection": "placementdrives",
+      "documentCount": 0,
+      "indexCount": 2,
+      "indexes": "_id, companyId_driveStatus"
+    },
+    {
+      "collection": "roles",
+      "documentCount": 3,
+      "indexCount": 2,
+      "indexes": "_id, name"
+    },
+    {
+      "collection": "progresses",
+      "documentCount": 0,
+      "indexCount": 4,
+      "indexes": "_id, userId_courseId, status, userId_lastAccessedAt"
+    },
+    {
+      "collection": "notifications",
+      "documentCount": 0,
+      "indexCount": 6,
+      "indexes": "_id, userId_createdAt, userId_isRead, userId_expiresAt_createdAt, targetRoleId_createdAt, isGlobal_createdAt"
+    },
+    {
+      "collection": "bookmarks",
+      "documentCount": 0,
+      "indexCount": 3,
+      "indexes": "_id, userId_entityId, userId_entityType"
+    },
+    {
+      "collection": "coursemodules",
+      "documentCount": 17,
+      "indexCount": 4,
+      "indexes": "_id, courseId, courseId_order, courseId_slug"
+    },
+    {
+      "collection": "companies",
+      "documentCount": 23,
+      "indexCount": 2,
+      "indexes": "_id, name"
+    }
+  ],
+  "orphans": {
+    "jobsWithoutCompany": 0
+  }
+}

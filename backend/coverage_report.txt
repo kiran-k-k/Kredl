@@ -1,0 +1,205 @@
+
+> backend@0.0.1 test:cov
+> jest --coverage src/modules/auth
+
+---------------------------------------|---------|----------|---------|---------|---------------------------------
+File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s               
+---------------------------------------|---------|----------|---------|---------|---------------------------------
+All files                              |   21.61 |    23.28 |   19.55 |   21.52 |                                 
+ src                                   |       0 |        0 |       0 |       0 |                                 
+  app.controller.ts                    |       0 |        0 |       0 |       0 | 1-53                            
+  app.module.ts                        |       0 |      100 |       0 |       0 | 1-121                           
+  app.service.ts                       |       0 |      100 |       0 |       0 | 1-6                             
+  main.ts                              |       0 |        0 |       0 |       0 | 1-106                           
+ src/common/dto                        |       0 |      100 |     100 |       0 |                                 
+  pagination-query.dto.ts              |       0 |      100 |     100 |       0 | 1-20                            
+ src/common/filters                    |       0 |        0 |       0 |       0 |                                 
+  all-exceptions.filter.ts             |       0 |        0 |       0 |       0 | 2-44                            
+ src/common/interceptors               |       0 |        0 |       0 |       0 |                                 
+  security-logger.interceptor.ts       |       0 |        0 |       0 |       0 | 1-32                            
+  transform.interceptor.ts             |       0 |        0 |       0 |       0 | 2-32                            
+ src/config                            |     100 |      100 |     100 |     100 |                                 
+  security.config.ts                   |     100 |      100 |     100 |     100 |                                 
+ src/config/database                   |       0 |        0 |       0 |       0 |                                 
+  database.config.ts                   |       0 |        0 |       0 |       0 | 3-28                            
+  database.constants.ts                |       0 |      100 |     100 |       0 | 1-5                             
+  database.logger.ts                   |       0 |      100 |       0 |       0 | 1-21                            
+  database.module.ts                   |       0 |      100 |     100 |       0 | 1-8                             
+  database.providers.ts                |       0 |      100 |     100 |       0 | 1-6                             
+  index.ts                             |       0 |      100 |     100 |       0 | 1-5                             
+ src/modules/admin-actions-log         |       0 |      100 |     100 |       0 |                                 
+  admin-actions-log.module.ts          |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/admin-actions-log/schemas |       0 |        0 |       0 |       0 |                                 
+  admin-actions-log.schema.ts          |       0 |        0 |       0 |       0 | 1-44                            
+ src/modules/analytics                 |       0 |      100 |     100 |       0 |                                 
+  analytics.module.ts                  |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/analytics/schemas         |       0 |        0 |     100 |       0 |                                 
+  analytics.schema.ts                  |       0 |        0 |     100 |       0 | 1-43                            
+ src/modules/announcements             |       0 |      100 |     100 |       0 |                                 
+  announcements.module.ts              |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/announcements/schemas     |       0 |        0 |       0 |       0 |                                 
+  announcement.schema.ts               |       0 |        0 |       0 |       0 | 1-34                            
+ src/modules/applications              |       0 |      100 |     100 |       0 |                                 
+  applications.module.ts               |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/applications/schemas      |       0 |        0 |       0 |       0 |                                 
+  application.schema.ts                |       0 |        0 |       0 |       0 | 1-36                            
+ src/modules/auth                      |   87.44 |    84.61 |      84 |   87.96 |                                 
+  auth.controller.ts                   |   93.02 |       80 |      75 |   92.68 | 95,101,120                      
+  auth.module.ts                       |       0 |      100 |       0 |       0 | 1-51                            
+  auth.service.ts                      |   95.65 |    84.96 |     100 |    95.6 | 181,185,199,272,276,279,282,311 
+ src/modules/auth/decorators           |   78.57 |      100 |   33.33 |      80 |                                 
+  current-user.decorator.ts            |      50 |      100 |       0 |      50 | 7-10                            
+  public.decorator.ts                  |     100 |      100 |     100 |     100 |                                 
+  roles.decorator.ts                   |      80 |      100 |       0 |     100 |                                 
+ src/modules/auth/dto                  |   25.92 |      100 |     100 |   25.92 |                                 
+  forgot-password.dto.ts               |       0 |      100 |     100 |       0 | 1-6                             
+  login.dto.ts                         |       0 |      100 |     100 |       0 | 1-10                            
+  register.dto.ts                      |     100 |      100 |     100 |     100 |                                 
+  resend-verification.dto.ts           |       0 |      100 |     100 |       0 | 1-8                             
+  reset-password.dto.ts                |       0 |      100 |     100 |       0 | 1-16                            
+  verify-email.dto.ts                  |       0 |      100 |     100 |       0 | 1-8                             
+ src/modules/auth/exceptions           |   73.33 |      100 |   42.85 |   73.33 |                                 
+  auth.exceptions.ts                   |   73.33 |      100 |   42.85 |   73.33 | 17,23,29,35                     
+ src/modules/auth/guards               |     100 |       90 |     100 |     100 |                                 
+  google-auth.guard.ts                 |     100 |      100 |     100 |     100 |                                 
+  jwt-auth.guard.ts                    |     100 |    83.33 |     100 |     100 | 8                               
+  jwt-refresh.guard.ts                 |     100 |      100 |     100 |     100 |                                 
+  local-auth.guard.ts                  |     100 |      100 |     100 |     100 |                                 
+  roles.guard.ts                       |     100 |    92.85 |     100 |     100 | 9                               
+ src/modules/auth/services             |     100 |    78.57 |     100 |     100 |                                 
+  password.service.ts                  |     100 |    66.66 |     100 |     100 | 9                               
+  token.service.ts                     |     100 |    81.81 |     100 |     100 | 11                              
+ src/modules/auth/strategies           |   18.64 |     38.8 |   22.22 |   17.64 |                                 
+  google.strategy.ts                   |     100 |    86.66 |     100 |     100 | 8-14                            
+  jwt-refresh.strategy.ts              |       0 |        0 |       0 |       0 | 1-34                            
+  jwt.strategy.ts                      |       0 |        0 |       0 |       0 | 1-42                            
+  local.strategy.ts                    |       0 |        0 |       0 |       0 | 1-17                            
+ src/modules/bookmarks                 |       0 |      100 |     100 |       0 |                                 
+  bookmarks.module.ts                  |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/bookmarks/schemas         |       0 |        0 |       0 |       0 |                                 
+  bookmark.schema.ts                   |       0 |        0 |       0 |       0 | 1-28                            
+ src/modules/cloudinary                |       0 |        0 |       0 |       0 |                                 
+  cloudinary-multer.config.ts          |       0 |        0 |       0 |       0 | 1-18                            
+  cloudinary.config.ts                 |       0 |        0 |       0 |       0 | 3-12                            
+  cloudinary.constants.ts              |       0 |      100 |     100 |       0 | 1-13                            
+  cloudinary.module.ts                 |       0 |      100 |     100 |       0 | 1-9                             
+  cloudinary.provider.ts               |       0 |      100 |       0 |       0 | 1-9                             
+  cloudinary.service.ts                |       0 |        0 |       0 |       0 | 1-114                           
+  index.ts                             |       0 |      100 |     100 |       0 | 1-6                             
+ src/modules/cloudinary/dto            |       0 |      100 |     100 |       0 |                                 
+  upload-image-response.dto.ts         |       0 |      100 |     100 |       0 | 1                               
+ src/modules/cloudinary/utils          |       0 |        0 |       0 |       0 |                                 
+  image-validation.util.ts             |       0 |        0 |       0 |       0 | 1-21                            
+ src/modules/companies                 |       0 |      100 |     100 |       0 |                                 
+  companies.module.ts                  |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/companies/schemas         |       0 |      100 |     100 |       0 |                                 
+  company.schema.ts                    |       0 |      100 |     100 |       0 | 1-32                            
+ src/modules/courses                   |       0 |        0 |       0 |       0 |                                 
+  courses.controller.ts                |       0 |        0 |       0 |       0 | 1-85                            
+  courses.module.ts                    |       0 |      100 |     100 |       0 | 1-15                            
+  courses.service.ts                   |       0 |        0 |       0 |       0 | 1-89                            
+ src/modules/courses/dto               |       0 |        0 |     100 |       0 |                                 
+  create-course.dto.ts                 |       0 |        0 |     100 |       0 | 1-48                            
+  update-course.dto.ts                 |       0 |      100 |     100 |       0 | 1-4                             
+ src/modules/courses/schemas           |       0 |        0 |       0 |       0 |                                 
+  course.schema.ts                     |       0 |        0 |       0 |       0 | 1-72                            
+ src/modules/database-health           |       0 |        0 |       0 |       0 |                                 
+  database-health.controller.ts        |       0 |        0 |       0 |       0 | 1-38                            
+  database-health.module.ts            |       0 |      100 |     100 |       0 | 1-9                             
+  database-health.service.ts           |       0 |        0 |       0 |       0 | 1-103                           
+ src/modules/email                     |   12.61 |    17.64 |       0 |   10.47 |                                 
+  email.config.ts                      |      20 |        0 |       0 |   11.11 | 4-16                            
+  email.constants.ts                   |     100 |      100 |     100 |     100 |                                 
+  email.module.ts                      |       0 |      100 |     100 |       0 | 1-11                            
+  email.provider.ts                    |       0 |      100 |       0 |       0 | 1-19                            
+  email.service.ts                     |   23.25 |    21.42 |       0 |   19.51 | 19-126                          
+  index.ts                             |       0 |      100 |     100 |       0 | 1-18                            
+  test-email.ts                        |       0 |      100 |       0 |       0 | 1-48                            
+ src/modules/email/dto                 |       0 |        0 |     100 |       0 |                                 
+  email-response.dto.ts                |       0 |      100 |     100 |       0 | 1                               
+  send-email-options.dto.ts            |       0 |        0 |     100 |       0 | 1-44                            
+  send-template-email.dto.ts           |       0 |        0 |     100 |       0 | 1-44                            
+ src/modules/email/templates           |   34.78 |        0 |       0 |   21.05 |                                 
+  email-verification.template.ts       |      40 |        0 |       0 |      25 | 5-8                             
+  notification.template.ts             |   22.22 |        0 |       0 |    12.5 | 5-23                            
+  password-reset.template.ts           |      40 |        0 |       0 |      25 | 4-7                             
+  welcome.template.ts                  |      50 |        0 |       0 |   33.33 | 4-6                             
+ src/modules/email/utils               |   36.36 |        0 |       0 |      30 |                                 
+  email-validator.util.ts              |   29.03 |        0 |       0 |   21.42 | 8,12-20,28-57                   
+  template-renderer.util.ts            |   53.84 |        0 |       0 |      50 | 13-23                           
+ src/modules/job-roles                 |       0 |      100 |     100 |       0 |                                 
+  job-roles.module.ts                  |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/job-roles/schemas         |       0 |        0 |     100 |       0 |                                 
+  job-role.schema.ts                   |       0 |        0 |     100 |       0 | 1-24                            
+ src/modules/jobs                      |       0 |      100 |     100 |       0 |                                 
+  jobs.module.ts                       |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/jobs/schemas              |       0 |        0 |     100 |       0 |                                 
+  job.schema.ts                        |       0 |        0 |     100 |       0 | 1-51                            
+ src/modules/lesson-notes              |       0 |        0 |       0 |       0 |                                 
+  lesson-notes.controller.ts           |       0 |        0 |       0 |       0 | 1-87                            
+  lesson-notes.module.ts               |       0 |      100 |     100 |       0 | 1-17                            
+  lesson-notes.service.ts              |       0 |        0 |       0 |       0 | 1-101                           
+ src/modules/lesson-notes/dto          |       0 |      100 |     100 |       0 |                                 
+  create-lesson-note.dto.ts            |       0 |      100 |     100 |       0 | 1-23                            
+  lesson-notes-filter.dto.ts           |       0 |      100 |     100 |       0 | 1-9                             
+  update-lesson-note.dto.ts            |       0 |      100 |     100 |       0 | 1-4                             
+ src/modules/lesson-notes/schemas      |       0 |        0 |     100 |       0 |                                 
+  lesson-note.schema.ts                |       0 |        0 |     100 |       0 | 1-40                            
+ src/modules/lessons                   |       0 |        0 |       0 |       0 |                                 
+  lessons.controller.ts                |       0 |        0 |       0 |       0 | 1-85                            
+  lessons.module.ts                    |       0 |      100 |     100 |       0 | 1-15                            
+  lessons.service.ts                   |       0 |        0 |       0 |       0 | 1-101                           
+ src/modules/lessons/dto               |       0 |      100 |     100 |       0 |                                 
+  create-lesson.dto.ts                 |       0 |      100 |     100 |       0 | 1-64                            
+  lessons-filter.dto.ts                |       0 |      100 |     100 |       0 | 1-9                             
+  update-lesson.dto.ts                 |       0 |      100 |     100 |       0 | 1-4                             
+ src/modules/lessons/schemas           |       0 |        0 |       0 |       0 |                                 
+  lesson.schema.ts                     |       0 |        0 |       0 |       0 | 1-80                            
+ src/modules/modules                   |       0 |        0 |       0 |       0 |                                 
+  modules.controller.ts                |       0 |        0 |       0 |       0 | 1-85                            
+  modules.module.ts                    |       0 |      100 |     100 |       0 | 1-17                            
+  modules.service.ts                   |       0 |        0 |       0 |       0 | 1-101                           
+ src/modules/modules/dto               |       0 |      100 |     100 |       0 |                                 
+  create-module.dto.ts                 |       0 |      100 |     100 |       0 | 1-33                            
+  modules-filter.dto.ts                |       0 |      100 |     100 |       0 | 1-9                             
+  update-module.dto.ts                 |       0 |      100 |     100 |       0 | 1-4                             
+ src/modules/modules/schemas           |       0 |        0 |       0 |       0 |                                 
+  module.schema.ts                     |       0 |        0 |       0 |       0 | 1-72                            
+ src/modules/notifications             |       0 |      100 |     100 |       0 |                                 
+  notifications.module.ts              |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/notifications/schemas     |       0 |        0 |       0 |       0 |                                 
+  notification.schema.ts               |       0 |        0 |       0 |       0 | 1-38                            
+ src/modules/placement-drives          |       0 |      100 |     100 |       0 |                                 
+  placement-drives.module.ts           |       0 |      100 |     100 |       0 | 1-12                            
+ src/modules/placement-drives/schemas  |       0 |        0 |     100 |       0 |                                 
+  placement-drive.schema.ts            |       0 |        0 |     100 |       0 | 1-31                            
+ src/modules/progress                  |       0 |        0 |       0 |       0 |                                 
+  progress.listener.ts                 |       0 |        0 |       0 |       0 | 1-44                            
+  progress.module.ts                   |       0 |      100 |     100 |       0 | 1-22                            
+  progress.service.ts                  |       0 |        0 |       0 |       0 | 1-58                            
+ src/modules/progress/schemas          |       0 |        0 |       0 |       0 |                                 
+  module-completion.schema.ts          |       0 |        0 |       0 |       0 | 1-62                            
+  progress.schema.ts                   |       0 |        0 |       0 |       0 | 1-52                            
+  quiz-attempt.schema.ts               |       0 |        0 |     100 |       0 | 1-66                            
+  quiz.schema.ts                       |       0 |        0 |       0 |       0 | 1-58                            
+ src/modules/projects                  |       0 |        0 |       0 |       0 |                                 
+  projects.controller.ts               |       0 |        0 |       0 |       0 | 1-85                            
+  projects.module.ts                   |       0 |      100 |     100 |       0 | 1-15                            
+  projects.service.ts                  |       0 |        0 |       0 |       0 | 1-101                           
+ src/modules/projects/dto              |       0 |      100 |     100 |       0 |                                 
+  create-project.dto.ts                |       0 |      100 |     100 |       0 | 1-62                            
+  projects-filter.dto.ts               |       0 |      100 |     100 |       0 | 1-9                             
+  update-project.dto.ts                |       0 |      100 |     100 |       0 | 1-4                             
+ src/modules/projects/schemas          |       0 |        0 |       0 |       0 |                                 
+  project.schema.ts                    |       0 |        0 |       0 |       0 | 1-61                            
+ src/modules/roles                     |      28 |       50 |       0 |    23.8 |                                 
+  roles.module.ts                      |       0 |      100 |     100 |       0 | 1-15                            
+  roles.service.ts                     |   38.88 |       50 |       0 |   31.25 | 8-45                            
+ src/modules/roles/schemas             |     100 |      100 |     100 |     100 |                                 
+  role.schema.ts                       |     100 |      100 |     100 |     100 |                                 
+ src/modules/users                     |   21.21 |       50 |       0 |   17.24 |                                 
+  users.module.ts                      |       0 |      100 |     100 |       0 | 1-17                            
+  users.service.ts                     |      28 |       50 |       0 |   21.73 | 8-186                           
+ src/modules/users/schemas             |   97.87 |     77.5 |   66.66 |   97.77 |                                 
+  user.schema.ts                       |   97.87 |     77.5 |   66.66 |   97.77 | 134                             
+---------------------------------------|---------|----------|---------|---------|---------------------------------

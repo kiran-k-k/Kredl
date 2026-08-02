@@ -1,0 +1,23 @@
+[
+  {
+    "moduleSlug": "m01-java-fundamentals",
+    "category": "Core Java Fundamentals",
+    "question": "Why is Java considered platform-independent?",
+    "answer": "Java is platform-independent because its compiler does not compile code into platform-specific machine language. Instead, it compiles code into an intermediate bytecode. This bytecode can be interpreted and executed by the Java Virtual Machine (JVM) on any operating system that has a JVM installed.",
+    "difficulty": "Beginner"
+  },
+  {
+    "moduleSlug": "m01-java-fundamentals",
+    "category": "Core Java Fundamentals",
+    "question": "What is the difference between JDK, JRE, and JVM?",
+    "answer": "JVM (Java Virtual Machine) is an abstract machine that provides a runtime environment to execute Java bytecode. JRE (Java Runtime Environment) contains the JVM along with class libraries and other files needed to run Java programs. JDK (Java Development Kit) is a full-featured software development kit that includes the JRE plus development tools like the compiler (javac) and debugger.",
+    "difficulty": "Beginner"
+  },
+  {
+    "moduleSlug": "m01-java-fundamentals",
+    "category": "Core Java Fundamentals",
+    "question": "Is Java a 100% Object-Oriented Programming language?",
+    "answer": "No, Java is not 100% object-oriented because it supports primitive data types (like int, boolean, char, float) which are not objects.",
+    "difficulty": "Intermediate"
+  }
+]

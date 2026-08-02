@@ -1,0 +1,175 @@
+
+> backend@0.0.1 lint
+> eslint "{src,apps,libs,test}/**/*.ts" --fix
+
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/config/database/database.providers.ts
+  4:10  error  'DATABASE_CONNECTION_NAME' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/auth.controller.spec.ts
+   66:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+   97:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+  115:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+  149:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+  179:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+  184:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/auth.controller.ts
+  17:10  error  'JwtAuthGuard' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/auth.module.ts
+  33:11  error  Unsafe assignment of an `any` value  @typescript-eslint/no-unsafe-assignment
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/auth.service.spec.ts
+    8:3   error    'ConflictException' is defined but never used                                  @typescript-eslint/no-unused-vars
+   11:3   error    'NotFoundException' is defined but never used                                  @typescript-eslint/no-unused-vars
+   18:3   error    'TokenVersionMismatchException' is defined but never used                      @typescript-eslint/no-unused-vars
+  336:42  warning  Unsafe argument of type `any` assigned to a parameter of type `UserDocument`   @typescript-eslint/no-unsafe-argument
+  434:7   error    Unsafe call of a type that could not be resolved                               @typescript-eslint/no-unsafe-call
+  434:33  error    Unsafe member access .mockResolvedValueOnce on a type that cannot be resolved  @typescript-eslint/no-unsafe-member-access
+  463:7   error    Unsafe call of a type that could not be resolved                               @typescript-eslint/no-unsafe-call
+  463:33  error    Unsafe member access .mockResolvedValueOnce on a type that cannot be resolved  @typescript-eslint/no-unsafe-member-access
+  516:7   error    Unsafe call of a type that could not be resolved                               @typescript-eslint/no-unsafe-call
+  516:33  error    Unsafe member access .mockResolvedValueOnce on a type that cannot be resolved  @typescript-eslint/no-unsafe-member-access
+  729:11  error    Unsafe assignment of an `any` value                                            @typescript-eslint/no-unsafe-assignment
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/auth.service.ts
+  231:48  error  Invalid type "ObjectId" of template literal expression  @typescript-eslint/restrict-template-expressions
+  254:68  error  Invalid type "ObjectId" of template literal expression  @typescript-eslint/restrict-template-expressions
+  288:68  error  Invalid type "ObjectId" of template literal expression  @typescript-eslint/restrict-template-expressions
+  394:29  error  Invalid type "ObjectId" of template literal expression  @typescript-eslint/restrict-template-expressions
+  518:29  error  Invalid type "ObjectId" of template literal expression  @typescript-eslint/restrict-template-expressions
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/guards/jwt-auth.guard.spec.ts
+  23:11  error  Unsafe assignment of an `any` value                                                                                                                                                                                                                                                                                                         @typescript-eslint/no-unsafe-assignment
+  24:15  error  Unsafe member access .canActivate on an `any` value                                                                                                                                                                                                                                                                                         @typescript-eslint/no-unsafe-member-access
+  36:12  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/guards/roles.guard.spec.ts
+  16:11  error  Unsafe assignment of an `any` value  @typescript-eslint/no-unsafe-assignment
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/guards/roles.guard.ts
+  36:50  error  The two values in this comparison do not have a shared enum type  @typescript-eslint/no-unsafe-enum-comparison
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/interfaces/jwt-payload.interface.ts
+  9:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/services/token.service.spec.ts
+  22:9   error  Unsafe return of a value of type `any`                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unsafe-return
+  62:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+  78:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+  94:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+  95:14  error  A method that is not declared with `this: void` may cause unintentional scoping of `this` when separated from its object.
+Consider using an arrow function or explicitly `.bind()`ing the method to avoid calling the method with an unintended `this` value. 
+If a function does not access `this`, it can be annotated with `this: void`  @typescript-eslint/unbound-method
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/services/token.service.ts
+  19:9  error  Unsafe assignment of an `any` value  @typescript-eslint/no-unsafe-assignment
+  26:9  error  Unsafe assignment of an `any` value  @typescript-eslint/no-unsafe-assignment
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/auth/strategies/google.strategy.spec.ts
+   7:7   error    'configService' is assigned a value but never used                       @typescript-eslint/no-unused-vars
+  45:50  warning  Unsafe argument of type `any` assigned to a parameter of type `Profile`  @typescript-eslint/no-unsafe-argument
+  64:50  warning  Unsafe argument of type `any` assigned to a parameter of type `Profile`  @typescript-eslint/no-unsafe-argument
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/database-health/database-health.controller.ts
+  16:32  error  Unsafe assignment of an `any` value              @typescript-eslint/no-unsafe-assignment
+  16:45  error  Unsafe member access .message on an `any` value  @typescript-eslint/no-unsafe-member-access
+  29:32  error  Unsafe assignment of an `any` value              @typescript-eslint/no-unsafe-assignment
+  29:45  error  Unsafe member access .message on an `any` value  @typescript-eslint/no-unsafe-member-access
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/database-health/database-health.service.ts
+  34:25  error  The two values in this comparison do not have a shared enum type  @typescript-eslint/no-unsafe-enum-comparison
+  50:57  error  Unsafe member access .stack on an `any` value                     @typescript-eslint/no-unsafe-member-access
+  64:9   error  Unsafe assignment of an `any` value                               @typescript-eslint/no-unsafe-assignment
+  64:33  error  Unsafe member access .uptime on an `any` value                    @typescript-eslint/no-unsafe-member-access
+  91:72  error  Unsafe member access .stack on an `any` value                     @typescript-eslint/no-unsafe-member-access
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/lessons/schemas/lesson.schema.ts
+  33:16  error  Unnecessary escape character: \:  no-useless-escape
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/progress/progress.service.ts
+  66:7   error  Unsafe assignment of an `any` value                     @typescript-eslint/no-unsafe-assignment
+  68:7   error  Unsafe assignment of an `any` value                     @typescript-eslint/no-unsafe-assignment
+  73:41  error  Invalid type "ObjectId" of template literal expression  @typescript-eslint/restrict-template-expressions
+  73:61  error  Invalid type "ObjectId" of template literal expression  @typescript-eslint/restrict-template-expressions
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/src/modules/users/schemas/user.schema.ts
+  3:19  error  'Expose' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/test/auth-matrix.e2e-spec.ts
+   92:9   error    Unsafe assignment of an `any` value                                  @typescript-eslint/no-unsafe-assignment
+  112:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  117:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  120:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  126:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  132:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  138:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  144:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  153:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  159:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  165:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  171:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  180:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  186:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  192:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+  198:22  warning  Unsafe argument of type `any` assigned to a parameter of type `App`  @typescript-eslint/no-unsafe-argument
+
+/Users/kirankishanraokendre/Documents/PROJECTS/Kredl/backend/test/auth.e2e-spec.ts
+    3:7   error  Unsafe assignment of an `any` value              @typescript-eslint/no-unsafe-assignment
+    3:17  error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   10:7   error  Unsafe assignment of an `any` value              @typescript-eslint/no-unsafe-assignment
+   10:22  error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   40:13  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+   69:13  error  Unsafe assignment of an `any` value              @typescript-eslint/no-unsafe-assignment
+   69:25  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+   69:25  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+   69:25  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+   69:25  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+   70:10  error  Unsafe member access .post on an `any` value     @typescript-eslint/no-unsafe-member-access
+   71:10  error  Unsafe member access .send on an `any` value     @typescript-eslint/no-unsafe-member-access
+   78:10  error  Unsafe member access .expect on an `any` value   @typescript-eslint/no-unsafe-member-access
+   80:18  error  Unsafe member access .body on an `any` value     @typescript-eslint/no-unsafe-member-access
+   91:13  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+   91:13  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+   91:13  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+   91:42  error  Unsafe member access .post on an `any` value     @typescript-eslint/no-unsafe-member-access
+   91:65  error  Unsafe member access .send on an `any` value     @typescript-eslint/no-unsafe-member-access
+  107:13  error  Unsafe assignment of an `any` value              @typescript-eslint/no-unsafe-assignment
+  107:25  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+  107:25  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+  107:25  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+  107:25  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+  108:10  error  Unsafe member access .post on an `any` value     @typescript-eslint/no-unsafe-member-access
+  109:10  error  Unsafe member access .send on an `any` value     @typescript-eslint/no-unsafe-member-access
+  113:10  error  Unsafe member access .expect on an `any` value   @typescript-eslint/no-unsafe-member-access
+  115:18  error  Unsafe member access .body on an `any` value     @typescript-eslint/no-unsafe-member-access
+  116:13  error  Unsafe assignment of an `any` value              @typescript-eslint/no-unsafe-assignment
+  116:27  error  Unsafe member access .headers on an `any` value  @typescript-eslint/no-unsafe-member-access
+  119:9   error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+  119:17  error  Unsafe member access .some on an `any` value     @typescript-eslint/no-unsafe-member-access
+  121:14  error  Unsafe call of an `any` typed value              @typescript-eslint/no-unsafe-call
+  121:22  error  Unsafe member access .some on an `any` value     @typescript-eslint/no-unsafe-member-access
+
+✖ 106 problems (88 errors, 18 warnings)
+
