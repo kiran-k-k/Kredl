@@ -168,7 +168,7 @@ export class AuthController {
     
     const frontendUrl =
       process.env.FRONTEND_OAUTH_REDIRECT_URL ||
-      `${mainFrontendUrl}/auth/success`;
+      `${mainFrontendUrl}/auth/callback`;
     res.redirect(`${frontendUrl}#token=${accessToken}`);
   }
 }
