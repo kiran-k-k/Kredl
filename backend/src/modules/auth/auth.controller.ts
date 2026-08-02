@@ -163,9 +163,12 @@ export class AuthController {
 
     // Redirect to frontend with the short-lived access token in the URL fragment (hash)
     // This is safer than query params as fragments are not sent to the server in HTTP requests
+    const rawFrontendUrls = process.env.FRONTEND_URL || 'http://localhost:3000';
+    const mainFrontendUrl = rawFrontendUrls.split(',')[0].trim();
+    
     const frontendUrl =
       process.env.FRONTEND_OAUTH_REDIRECT_URL ||
-      'http://localhost:3000/auth/success';
+      `${mainFrontendUrl}/auth/success`;
     res.redirect(`${frontendUrl}#token=${accessToken}`);
   }
 }
